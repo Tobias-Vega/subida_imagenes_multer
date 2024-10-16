@@ -1,7 +1,7 @@
 import { upload } from "../settings/upload.config.js";
 
 export const uploadImage = (req,res,next) => {
-    const uploadSingle = upload.single("image");
+    const uploadSingle = upload.single("imageUrl");
 
     uploadSingle(req,res, (error) => {
         if (error || !req.file) {
@@ -12,7 +12,7 @@ export const uploadImage = (req,res,next) => {
             })
         }
 
-        req.body["image"] = req.file.filename;
+        req.body.imageUrl = req.file.filename;
 
         next()
     })

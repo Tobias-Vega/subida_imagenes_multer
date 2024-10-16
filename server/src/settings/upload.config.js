@@ -23,12 +23,12 @@ const fileFilter = (_req,file,cb) => {
 
     //jpeg jpg png gif webp
 
-    const fileTypes = /jpeg|jpg|gif|png|webp/;
+    const fileTypes = /jpg|png/;
 
     const allowExtName = fileTypes.test(path.extname(file.originalname));
 
     if (!allowExtName) {
-        return cb(new Error('Solo se permiten imágenes (jpeg, jpg, png, gif webp)') )
+        return cb(new Error('Solo se permiten imágenes (jpg y png') )
     }
 
     return cb(null, true)

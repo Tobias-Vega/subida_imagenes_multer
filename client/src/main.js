@@ -5,7 +5,7 @@ const $app = document.querySelector("#app");
 const $form = document.createElement("form");
 
 const $input = document.createElement("input");
-$input.name = "productImage"; // ! Aquí va el valor del fieldName de su servidor
+$input.name = "imageUrl";
 $input.type = "file";
 $input.accept = "image/*";
 
@@ -46,7 +46,7 @@ $form.addEventListener("submit", (event) => {
 
   const formData = new FormData(event.target);
 
-  fetch("http://localhost:4000", { // ! Ruta de su servidor en la que recibe el archivo
+  fetch("http://localhost:3000/products", {
     method: "POST",
     body: formData,
   })
